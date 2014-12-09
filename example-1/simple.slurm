@@ -4,7 +4,7 @@
 #SBATCH --mem-per-cpu=1G
 #SBATCH --time=0-00:02:00     # 10 seconds
 #SBATCH --output=my.stdout
-#SBATCH --mail-user=william.r.french@vanderbilt.edu
+#SBATCH --mail-user=vunetid@vanderbilt.edu
 #SBATCH --mail-type=ALL
 #SBATCH --job-name="just_a_test"
 

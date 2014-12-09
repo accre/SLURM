@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --mail-user=william.r.french@vanderbilt.edu
+#SBATCH --mail-user=vunetid@vanderbilt.edu
 #SBATCH --mail-type=ALL
 #SBATCH --nodes=3
 #SBATCH --tasks-per-node=8
