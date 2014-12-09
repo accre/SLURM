@@ -1,5 +1,6 @@
 example-1/my_simple.slurm
 example-2/my_nikki.pbs
+example-2/nikki.pbs
 example-2/my_nikki.slurm
 example-3/my_mpi_job.slurm
 example-3/mpi_job.pbs
