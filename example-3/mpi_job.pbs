@@ -1,0 +1,14 @@
+#!/bin/bash
+#PBS -M william.r.french@vanderbilt.edu
+#PBS -m bae
+#PBS -l nodes=3:ppn=8
+#PBS -l walltime=7:00:00:00
+#PBS -l cput=168:00:00
+#PBS -l mem=3840mb
+#PBS -l pmem=160mb
+#PBS -o mpi_job.log
+#PBS -j oe
+date
+cat $PBS_NODEFILE
+time mpiexec -np 24 ./test   
+date
