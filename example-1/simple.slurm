@@ -2,7 +2,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=4
 #SBATCH --mem-per-cpu=1G
-#SBATCH --time=0-00:02:00     # 10 seconds
+#SBATCH --time=0-00:02:00     # 2 minutes
 #SBATCH --output=my.stdout
 #SBATCH --mail-user=vunetid@vanderbilt.edu
 #SBATCH --mail-type=ALL
