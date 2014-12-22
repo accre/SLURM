@@ -7,5 +7,7 @@ example-3/mpi_job.pbs
 example-3/test
 example-3/50-nodes.slurm
 example-3/README
+example-3/compile-openmpi.sh
+example-3/test-openmpi
 example-4/my_array.slurm
 example-4/README

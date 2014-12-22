@@ -10,5 +10,5 @@
 export I_MPI_PMI_LIBRARY=/usr/scheduler/slurm/lib/libpmi.so
 date
 echo $SLURM_JOB_NODELIST
-time srun -n 24 ./test
+time srun ./test
 date
