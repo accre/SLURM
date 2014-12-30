@@ -22,3 +22,6 @@ A simple MPI C++ code is also included, along with a compile script.
 
 - example-4: Job array example, showing how to run an executable on multiple
 similar input scripts in parallel.
+
+- example-5: GPU job example. This script loads HOOMD-Blue, a molecular dynamics
+package that runs on NVIDIA GPUs.
