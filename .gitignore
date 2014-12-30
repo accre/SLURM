@@ -11,3 +11,4 @@ example-3/compile-openmpi.sh
 example-3/test-openmpi
 example-4/my_array.slurm
 example-4/README
+example-5/my-gpu-job.slurm
