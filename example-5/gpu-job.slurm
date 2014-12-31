@@ -5,7 +5,7 @@
 #SBATCH --ntasks=1
 #SBATCH --time=2:00:00     # 2 hours
 #SBATCH --mem=100M
-#SBATCH -o gpu-job.log
+#SBATCH --output=gpu-job.log
 #SBATCH --partition=gpu
 #SBATCH --account=accre_gpu     # substitute appropriate group here
 
