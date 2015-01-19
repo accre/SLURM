@@ -1,17 +1,19 @@
 SLURM
 =====
 
-== Test Commnads ==
+Test Commands
+-------------
 
 - slurm-commands.sh: contains lots of examples of SLURM commands
 and how to customize the output of each command
 
-== Test Scripts ==
+Test Scripts
+------------
 
 Make sure to change the email if you want to submit these scripts.
 To submit to the cluster type:
 
-sbatch SCRIPT_NAME.slurm
+	sbatch SCRIPT_NAME.slurm
 
 - example-1: This runs a few very simple commands, one with a single
 process, and another few with multiple processes.
