@@ -48,7 +48,7 @@
 ### on how far back in time you want to go.
 #sreport cluster utilization
 #sreport user top  ### shows top ten cluster users
-sreport cluster AcountUtilizationByUser start=2015-01-01 -t Hours  ### splits job usage (CPU hours) by group and user
+#sreport cluster AcountUtilizationByUser start=2015-01-01 -t Hours  ### splits job usage (CPU hours) by group and user
 #sreport job sizesbyaccount PrintJobCount  ### shows number of jobs run by user
 
 ### "sbatch" submits a SLURM job batch script. Note that this command

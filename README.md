@@ -1,10 +1,14 @@
 SLURM
 =====
 
+== Test Commnads ==
 
-This repo contains example SLURM scripts for
-submitting to the cluster. Make sure to change
-the email if you want to submit these scripts.
+- slurm-commands.sh: contains lots of examples of SLURM commands
+and how to customize the output of each command
+
+== Test Scripts ==
+
+Make sure to change the email if you want to submit these scripts.
 To submit to the cluster type:
 
 sbatch SCRIPT_NAME.slurm
