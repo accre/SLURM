@@ -23,7 +23,7 @@
 ### display info about your own jobs run on the current day.
 #sacct
 #sacct --starttime=01.01.15    ### all jobs since Jan 15, 2015
-#sacct --alluseres
+#sacct --allusers
 #sacct --format=User,JobID,account,Timelimit,elapsed,ReqMem,MaxRss,MaxVMSize,nnodes,ncpus,nodelist,ExitCode
 #sacct --format=User,JobID,account,nodelist,Submit,Start,End,Elapsed,Timelimit
 
@@ -60,3 +60,7 @@
 ### can be used for running interative jobs
 #salloc --ntasks=1 --time=1:00:00 srun --pty /bin/bash    ### 1 CPU core allocation
 #salloc --nodes=2 --ntasks=16 --time=2:00:00 srun --pty /bin/bash    ### 16 CPU core allocation
+
+### "scancel" is the command for canceling a job that is either queued or running.
+### You will need to supply the appropriate SLURM JobID here.
+#scancel JOBID
