@@ -1,8 +1,4 @@
 example-1/my_simple.slurm
-example-2/my_nikki.pbs
-example-2/nikki.pbs
-example-2/my_nikki.slurm
-example-2/test
 example-3/my_mpi_job.slurm
 example-3/mpi_job.pbs
 example-3/test
@@ -14,3 +10,4 @@ example-4/my_array.slurm
 example-4/README
 example-5/my-gpu-job.slurm
 example-6/my_multithread.slurm
+old-example-2/*

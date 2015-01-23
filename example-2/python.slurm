@@ -3,10 +3,10 @@
 #SBATCH --mail-type=ALL
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --time=2:00:00
+#SBATCH --time=00:10:00
 #SBATCH --mem=500M
-#SBATCH --output=matlab_job_slurm.out
+#SBATCH --output=python_job_slurm.out
 
-setpkgs -a matlab
+setpkgs -a python2.7.8
 
-matlab < vectorization.m
+python < vectorization.py
