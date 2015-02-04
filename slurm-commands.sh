@@ -58,8 +58,8 @@
 ### "salloc" obtains a SLURM job allocation, executes a command,
 ### and then releases the allocation when the job completes. This
 ### can be used for running interative jobs
-#salloc --ntasks=1 --time=1:00:00 srun --pty /bin/bash    ### 1 CPU core allocation
-#salloc --nodes=2 --ntasks=16 --time=2:00:00 srun --pty /bin/bash    ### 16 CPU core allocation
+#salloc --ntasks=1 --time=1:00:00  ### 1 CPU core allocation
+#salloc --nodes=2 --ntasks=16 --mem=8G --time=2:00:00 ### 16 CPU core allocation, 8 GB of RAM per node
 
 ### "scancel" is the command for canceling a job that is either queued or running.
 ### You will need to supply the appropriate SLURM JobID here.
