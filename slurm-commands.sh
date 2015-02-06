@@ -16,7 +16,7 @@
 #squeue --states=running
 #squeue --long
 #squeue --start
-#squeue --format="%10u %15a %5i %2t %4M %5D %9C %10f %10n %o %Z"
+#squeue --Format=account,username,numcpus,state,reason,starttime,timeleft,priority
 
 ### "sacct" accesses the database of job information and shows
 ### info for jobs that have already run. By default, sacct will
