@@ -1,0 +1,36 @@
+# This is a job array example
+
+# A few things are unclear
+
+1) How are CPUs allocated to job arrays? If you are asking for 
+   a single node and a single task, does that mean that all jobs
+   will run simultaneously on the same CPU core? My tests suggest
+   that to not be the case, i.e. when i allocate ntasks=3 there is 
+   no difference in the time required to run matlab processes (comparing
+   to the case where I request ntasks=1).
+
+   - I have confirmed this using ntasks and by checking node usage while
+     a job array is running with "scontrol show nodes". Each array index
+     is allocated its own CPU. If you request multiple tasks, then each
+     job array index is allocated the corresponding number of CPUs.
+
+2) Even though I am requesting a single node, one of my three jobs within
+   an array is occasionally landing on a separate node. I'm guessing
+   this is a memory issue, and if I'm requesting too much memory for all 
+   the jobs to run simultaneously on the same node, it gets bumped to 
+   a different node. So the node count you request is not a guarantee that 
+   you will only get that number across all jobs in an array...I should
+   test what happens if I request a specific node.
+
+   - This actually appears to be about CPUs. When I run a job array of 
+     size 3, and then ask for ntasks=3, there is not space for all three
+     of the jobs to run simultaneously (8-core nodes, and 9 cores are requested
+     as each job array index is allocated 3 cores. The surprising part is
+     that by default SLURM will push excess jobs to a different node, even
+     if you have nnodes set to 1. When I included a nodelist option with only
+     the dell node, then one of the three job array indices had to wait for 
+     the other two to finish before running. 
+   - The node count is enforced for each job array index, not the entire array.
+   - Can limit the number of cores that are used using the syntax:
+     --array=0-9%4
+     This would limit the arrays to running at a maximum of 4 at once.
