@@ -18,6 +18,16 @@
 #squeue --start
 #squeue --Format=account,username,numcpus,state,reason,starttime,timeleft,priority
 
+### ACCRE staff have written custom commands for viewing the queue by group
+### Run q3 and qSummary without any arguments
+#q3
+#qSummary
+
+### ACCRE staff have also written a command for viewing group limits called showLimits
+### You can run this command without any arguments or with the -g <group_name> flag
+#showLimits
+#showLimits -g <group_name>
+
 ### "sacct" accesses the database of job information and shows
 ### info for jobs that have already run. By default, sacct will
 ### display info about your own jobs run on the current day.
@@ -26,6 +36,11 @@
 #sacct --allusers
 #sacct --format=User,JobID,account,Timelimit,elapsed,ReqMem,MaxRss,MaxVMSize,nnodes,ncpus,nodelist,ExitCode
 #sacct --format=User,JobID,account,nodelist,Submit,Start,End,Elapsed,Timelimit
+
+### An often more convienient way of getting information about job usage is
+### from a command called stracejob, which was written by ACCRE staff.
+### You only need to know your job id to run stracejob:
+#stracejob <jobid> 
 
 ### "scontrol" provides options for modifying resource requests for submitted jobs
 ### It also provides a means of checking node attributes. Note, commands with JOBID
