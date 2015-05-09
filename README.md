@@ -15,22 +15,28 @@ To submit to the cluster type:
 
 	sbatch SCRIPT_NAME.slurm
 
-- **srun/**: This runs a few very simple commands, one with a single
+- **srun/** This runs a few very simple commands, one with a single
 process, and another few with multiple processes.
 Demonstrates the use of srun.
 
-- **python-job/**: Demonstrates a simple Python job, using a single CPU core.
+- **python-job/** Demonstrates a simple Python job, using a single CPU core.
 
-- **mpi-job/**: Example of a MPI job running across 3 nodes and 24 CPU cores.
+- **mpi-job/** Example of a MPI job running across 3 nodes and 24 CPU cores.
 A simple MPI C++ code is also included, along with a compile script.
 
-- **job-array/**: Job array example, showing how to run an executable on multiple
+- **job-array/** Job array example, showing how to run an executable on multiple
 similar input scripts in parallel.
 
-- **gpu-job/**: GPU job example. This script loads HOOMD-Blue, a molecular dynamics
+- **job-array2/** Another job array example, except in this case the processing 
+is simplified further as the file names (being analyzed by Python) do not need to
+follow a regular naming scheme. In fact, the file names are completely arbitrary, 
+the user just has to put them all in a subdirectory called **data** and then adjust
+the array to the appropriate length. 
+
+- **gpu-job/** GPU job example. This script loads HOOMD-Blue, a molecular dynamics
 package that runs on NVIDIA GPUs.
 
-- **multithreaded-job/**: Multithreaded job example. This job runs a simple Hello World Posix
+- **multithreaded-job/** Multithreaded job example. This job runs a simple Hello World Posix
 threads C code. Multithreaded jobs generally run on a single node and only require
 a single task (i.e. process) that spawns a group of threads to execute across multiple
 CPU cores. The --cpus-per-task option is needed in multithreaded programs.
