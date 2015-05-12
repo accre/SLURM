@@ -1,5 +1,4 @@
 #!/bin/bash
 
-setpkgs -a gcc_compiler
-setpkgs -a openmpi_gcc
-mpicxx test.cpp -o test-openmpi
+setpkgs -a openmpi_1.8.4
+mpicxx test.cpp -o mpi_exec
