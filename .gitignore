@@ -1,13 +1,2 @@
-srun/my_simple.slurm
-mpi-job/my_mpi_job.slurm
-mpi-job/mpi_job.pbs
-mpi-job/test
-mpi-job/50-nodes.slurm
-mpi-job/README
-mpi-job/compile-openmpi.sh
-mpi-job/test-openmpi
-job-array/README
-gpu-job/my-gpu-job.slurm
-multithreaded-job/my_multithread.slurm
 old-example-2/*
 old-example-4/*
