@@ -8,5 +8,5 @@
 #SBATCH --output=mpi_job_slurm.log
 setpkgs -a openmpi_1.8.4
 echo $SLURM_JOB_NODELIST
-srun --mpi=pmi2 ./test  # srun is SLURM's version of mpirun/mpiexec
+srun --mpi=pmi2 ./mpi_exec  # srun is SLURM's version of mpirun/mpiexec
 date
