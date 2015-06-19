@@ -1,6 +1,6 @@
 from hoomd_script import *
 # create 100 random particles of name A
-init.create_random(N=10000, phi_p=0.01, name='A')
+init.create_random(N=50000, phi_p=0.01, name='A')
 # specify Lennard-Jones interactions between particle pairs
 lj = pair.lj(r_cut=3.0)
 lj.pair_coeff.set('A', 'A', epsilon=1.0, sigma=1.0)
