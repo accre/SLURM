@@ -38,9 +38,9 @@
 #sacct --format=User,JobID,account,nodelist,Submit,Start,End,Elapsed,Timelimit
 
 ### An often more convienient way of getting information about job usage is
-### from a command called stracejob, which was written by ACCRE staff.
-### You only need to know your job id to run stracejob:
-#stracejob <jobid> 
+### from a command called rtracejob, which was written by ACCRE staff.
+### You only need to know your job id to run rtracejob:
+#rtracejob <jobid> 
 
 ### "scontrol" provides options for modifying resource requests for submitted jobs
 ### It also provides a means of checking node attributes. Note, commands with JOBID
