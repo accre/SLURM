@@ -1,4 +1,4 @@
-CC=/usr/local/gcc/4.6.1/bin/gcc
+CC=gcc
 CFLAGS=-Wall -lpthread
 SRC=hello.c
 EXE=hello

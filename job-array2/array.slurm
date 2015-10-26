@@ -8,4 +8,4 @@
 #SBATCH --output=python_array_job_slurm_%A_%a.out
 arrayfile=`ls data/ | awk -v line=$SLURM_ARRAY_TASK_ID '{if (NR == line) print $0}'`
 setpkgs -a python2.7.8
-python < data/$arrayfile
+python data/$arrayfile

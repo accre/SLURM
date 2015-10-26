@@ -9,4 +9,4 @@
 
 setpkgs -a python2.7.8
 
-python < vectorization.py
+python vectorization.py

@@ -12,4 +12,4 @@ echo "SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
 echo "SLURM_ARRAY_JOB_ID: " $SLURM_ARRAY_JOB_ID
 
 setpkgs -a python2.7.8
-python < vectorization_${SLURM_ARRAY_TASK_ID}.py
+python vectorization_${SLURM_ARRAY_TASK_ID}.py

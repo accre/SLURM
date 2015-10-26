@@ -1,4 +1,4 @@
-CC=/usr/local/openmpi/1.8.4/x86_64/gcc46/bin/mpicxx
+CC=mpicxx
 CFLAGS=-Wall
 SRC=test.cpp
 EXE=mpi_exec

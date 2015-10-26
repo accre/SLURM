@@ -10,4 +10,6 @@
 #SBATCH --job-name=multithreaded_example
 
 # Run multi-threaded application
+setpkgs -a gcc_compiler
+make
 ./hello
