@@ -14,10 +14,12 @@ to make a script called **myscript.sh** executable you can type:
 In this example, the epilog script is a Bash script, but it can be any type of executable file you want it to be
 (Python, Perl, etc.).
 
-Generally, you want to put your epilog script in a place that is easy to access and recall. Something place like 
+Generally, you want to put your epilog script in a place that is easy to access and recall. Some place like 
 **$HOME/epilogs** might work well. 
 
 ## Using Srun
 
 To invoke your epilog script once your job is complete, you must pass your program to SLURM's ```srun``` command. Take
-whatever command (and arguments) you typically use, and simply prepend ```srun --epilog=/path/to/your/epilog/myscript.sh```.
+whatever command (and arguments) you typically use, and simply prepend: 
+
+srun --epilog=/path/to/your/epilog/myscript.sh
