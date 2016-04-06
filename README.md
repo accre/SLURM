@@ -40,3 +40,8 @@ package that runs on NVIDIA GPUs.
 threads C code. Multithreaded jobs generally run on a single node and only require
 a single task (i.e. process) that spawns a group of threads to execute across multiple
 CPU cores. The --cpus-per-task option is needed in multithreaded programs.
+
+- **epilog** Epilog example. This job demonstrates how to invoke an epilog script after
+your job for post-processing. This particular example looks for any files in your directory
+that exceed 3 megabytes and compress and archives those files. In practice, you might tweak
+this to only compress larger files and to exclude any large input files you do not wish to compress.
