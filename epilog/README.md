@@ -1,4 +1,4 @@
-# SLURM Epilogs
+# SLURM Epilogs (and Prologs)
 
 Epilogs are useful for performing cleanup and post-processing after your job has completed.
 They are perfect when you find yourself performing the same post-processing steps time and time 
@@ -26,4 +26,4 @@ Generally, you want to put your epilog script in a place that is easy to access 
 To invoke your epilog script once your job is complete, you must pass your program to SLURM's ```srun``` command. Take
 whatever command (and arguments) you typically use, and simply prepend: 
 
-srun --epilog=/path/to/your/epilog/myscript.sh
+	srun --epilog=/path/to/your/epilog/myscript.sh
