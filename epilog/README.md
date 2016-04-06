@@ -4,6 +4,10 @@ Epilogs are useful for performing cleanup and post-processing after your job has
 They are perfect when you find yourself performing the same post-processing steps time and time 
 again for a particular type of job.
 
+Prologs are also available within SLURM, and they work in an identical manner to epilogs. 
+
+For more details on SLURM epilogs and prologs, see: http://slurm.schedmd.com/prolog_epilog.html
+
 ## The Epilog Script
 
 The epilog script should be executable, which you can accomplish using the command ```chmod```. For example,
