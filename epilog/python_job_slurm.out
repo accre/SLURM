@@ -1,0 +1,4 @@
+naive implementation: 0.24 seconds elapsed
+vectorized implementation: 0.00 seconds elapsed
+arrays equal!
+printing two arrays to file...

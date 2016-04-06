@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# This line identifies any files over 3000 kb in size in your current directory
+large_files=`find . -type f -size +3000k -exec ls -lh {} \; | awk '{ print $9 }' | cut -f2 -d"/"`
+
+# In this loop, we loop over all large files, compress (with bzip2) and archive the file,
+# and then delete the original file
+for big_file in $large_files;
+do
+ 
+   archive=${big_file}.tar.bz2
+   tar cjvf ${archive} ${big_file}
+
+   # Check that the archive was created; if so, delete the original file
+   if [ -s ${archive} ]
+      then 
+         rm ${big_file}
+   fi
+
+done
