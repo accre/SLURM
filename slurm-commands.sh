@@ -23,6 +23,10 @@
 #q3
 #qSummary
 
+### SlurmActive was also developed by ACCRE staff and provides information
+### about the number of processor cores available in the cluster
+#SlurmActive
+
 ### ACCRE staff have also written a command for viewing group limits called showLimits
 ### You can run this command without any arguments or with the -g <group_name> flag
 #showLimits
