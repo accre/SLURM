@@ -3,12 +3,13 @@
 #SBATCH --mail-type=ALL
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --time=2:00:00     # 2 hours
-#SBATCH --mem=16G
-#SBATCH --output=gpu-job.log
-#SBATCH --partition=gpu
+#SBATCH --time=12:00:00         # 12 hours
+#SBATCH --mem=10G               # 10 GB RAM 
+#SBATCH --output=gpu-job.log    # output file
+#SBATCH --partition=maxwell     # low-latency RoCE network and 4 Titan X GPUs per node
 #SBATCH --account=accre_gpu     # substitute appropriate group here
+#SBATCH --gres=gpu:1            # single GPU job
 
-setpkgs -a hoomd_1.0.5
+setpkgs -a hoomd_1.3.3_roce
 
-hoomd simple-script.py
+srun hoomd simple-script.py
