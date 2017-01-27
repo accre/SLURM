@@ -14,5 +14,4 @@ each recursive call of the script, `LEVEL` is decremented by 1. Logically,
 Level 0 should terminate the recursive loop, essentially by *not* calling 
 another `sbatch` job.
 
-Note that the script only checks that `LEVEL` is a non-negative integer,
-but passing a very large value of `LEVEL` would be a bad idea.
+**Note that launching a large number (or infinite) of SLURM jobs would be a very bad idea.** 
