@@ -1,15 +1,22 @@
 #include <mpi.h>
 #include <math.h>
+#include <sys/types.h>
+#include <unistd.h>
 #include <iostream>
+
 int main(int argc, char **argv) {
+
 	int n, myid, numprocs, i;
 	double PI25DT = 3.141592653589793238462643;
 	double mypi, pi, h, sum, x;
+
 	MPI_Init(&argc,&argv);
 	MPI_Comm_size(MPI_COMM_WORLD,&numprocs);
 	MPI_Comm_rank(MPI_COMM_WORLD,&myid);
+
 	std::cout << "Process " << getpid() << " is " << myid
 	<< " of " << numprocs << " processes" << std::endl;
+
 	n = 10000000;
 	h = 1.0 / (double) n;
 	sum = 0.0;
@@ -18,6 +25,7 @@ int main(int argc, char **argv) {
 		sum += 4.0 / (1.0 + x*x);
 	}
 	mypi = h * sum;
+
 	MPI_Reduce(&mypi, &pi, 1, MPI_DOUBLE, MPI_SUM, 0,MPI_COMM_WORLD);
 	
 	if (myid == 0) {
@@ -26,4 +34,5 @@ int main(int argc, char **argv) {
 	}
 	MPI_Finalize();
 	return 0;
+
 }

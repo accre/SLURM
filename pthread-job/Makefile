@@ -1,10 +1,10 @@
 CC=gcc
 CFLAGS=-Wall -lpthread
-SRC=hello.c
+SRC=mt_hello.c
 EXE=hello
 
 release : ${SRC}
-	$(CC) -o ${EXE} $< ${CFLAGS} -O3
+	$(CC) -o ${EXE} $< ${CFLAGS}
 
 debug : ${SRC}
 	$(CC) -o ${EXE}_debug $< ${CFLAGS} -g
@@ -12,5 +12,4 @@ debug : ${SRC}
 .PHONY: clean
 
 clean:
-	rm ${EXE}
-	rm ${EXE}_debug
+	rm -f ${EXE} ${EXE}_debug

@@ -1,12 +1,11 @@
 #!/bin/bash
+#SBATCH --mail-user=<myemail@vanderbilt.edu>
+#SBATCH --mail-type=ALL
 #SBATCH --nodes=1
 #SBATCH --ntasks=4
 #SBATCH --mem-per-cpu=1G
 #SBATCH --time=0-00:02:00     # 2 minutes
 #SBATCH --output=my.stdout
-#SBATCH --mail-user=vunetid@vanderbilt.edu
-#SBATCH --mail-type=ALL
-#SBATCH --job-name="just_a_test"
 
 # This will be run once for a single process
 /bin/hostname 

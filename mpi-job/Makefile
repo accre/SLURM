@@ -1,10 +1,10 @@
 CC=mpicxx
 CFLAGS=-Wall
-SRC=test.cpp
-EXE=mpi_exec
+SRC=compute_pi.cpp
+EXE=mpi_pi
 
 release : ${SRC}
-	$(CC) -o ${EXE} $< ${CFLAGS} -O3
+	$(CC) -o ${EXE} $< ${CFLAGS}
 
 debug : ${SRC}
 	$(CC) -o ${EXE}_debug $< ${CFLAGS} -g
@@ -12,5 +12,4 @@ debug : ${SRC}
 .PHONY: clean
 
 clean:
-	rm ${EXE}
-	rm ${EXE}_debug
+	rm -f ${EXE} ${EXE}_debug
