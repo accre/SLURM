@@ -52,3 +52,5 @@ that exceed 3 megabytes and compresses and archives those files. In practice, yo
 this to only compress larger files and to exclude any large input files you do not wish to compress.
 
 - **slurm-ception/** Cool example but use with caution!
+
+- **julia-job/** Example of running Julia on the cluster in serial and in parallel.
