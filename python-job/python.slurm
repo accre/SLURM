@@ -10,7 +10,7 @@
 # Load the Anaconda distribution of Python, which comes
 # pre-bundled with many of the popular scientific computing tools like
 # numpy, scipy, pandas, scikit-learn, etc.
-module load Anaconda2
+module load Anaconda3
 
-# Pass your Python script to the Anaconda2 python intepreter for execution
+# Pass your Python script to the Anaconda3 python intepreter for execution
 python vectorization.py
