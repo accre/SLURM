@@ -1,20 +1,36 @@
+# To run parallel jobs in SLURM, we need the
+# ClusterManagers package, which
+# can be installed with the command
+# `Pkg.add("ClusterManagers")`
 
-# SLURM will run this file in the same way
-# a file would run on your own computer if you'd open
-# julia with the `-p` option specified.
-#
-# Since we asked for 4 processes in the `.slurm` file,
-# this will execute as if you'd openned julia on your own computer
-# with `julia -p 3` or as if you'd openned Julia and run
-# `addprocs(3)`.
+# Recall we asked for 4 processes in the `.slurm` file.
+# These are created using either `addprocs_slurm(4)` or
+# `addprocs(SlurmManager(4))`.
 
-# See ids of our workers. Should be length 3.
+# This will create worker instances that work the same way as
+# the workers that would be created if you'd launched julia
+# on your own computer with `julia -p 4` or as if you'd
+# openned Julia and run
+# `addprocs(4)`.
+
+using ClusterManagers
+
+# Here we create our parallel julia processes
+addprocs_slurm(4)
+
+# See ids of our workers. Should be length 4.
 # The output of this `println` command will appear in the
 # SLURM output file julia_in_parallel.output
 println(workers())
 
-# Ask everyone to say hi
-@everywhere begin
+# Here we ask everyone to say hi!
+# Output will appear in julia_in_parallel.output
+g = @parallel (vcat) for w in workers()
     worker_id = myid()
-    println("Hello! I'm worker number $worker_id. Nice to meet you!")
+    worker_host = gethostname()
+    "Hello! I'm worker number $worker_id, and I reside on machine $worker_host. Nice to meet you!"
+end
+
+for i in g
+   println(i)
 end
