@@ -1,8 +1,7 @@
 #!/bin/bash
 #SBATCH --mail-user=someone@emailservice.com  # email address
 #SBATCH --mail-type=ALL  # Alerts sent when job begins, ends, or aborts
-#SBATCH --ntasks=4
-#SBATCH --ntasks-per-node=2
+#SBATCH --ntasks=5
 #SBATCH --mem-per-cpu=1G
 #SBATCH --job-name=my_first_parallel_julia
 #SBATCH --time=00-00:02:00  # Wall Clock time (dd-hh:mm:ss) [max of 14 days]
