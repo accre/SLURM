@@ -51,6 +51,4 @@ your job for post-processing. This particular example looks for any files in you
 that exceed 3 megabytes and compresses and archives those files. In practice, you might tweak
 this to only compress larger files and to exclude any large input files you do not wish to compress.
 
-- **slurm-ception/** Cool example but use with caution!
-
 - **julia-job/** Example of running Julia on the cluster in serial and in parallel.
