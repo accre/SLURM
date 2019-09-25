@@ -17,3 +17,6 @@ $ g++ -o pi-single -O2 -march=skylake pi-single.cpp
 
 $ mpic++ -o pi-mpi -O2 -march=skylake pi-mpi.cpp
 ```
+
+A python version using the `mpi4py` and `numpy` libraries, for this
+one should load `GCC OpenMPI Python mpi4py numpy`
