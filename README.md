@@ -1,54 +1,66 @@
-SLURM
-=====
+SLURM Examples for ACCRE
+=========================
 
-Test Commands
--------------
+## ⭐ START HERE: Basic Examples (Updated October 2025)
+
+**NEW USERS**: Go to the **[basic-examples/](basic-examples/)** directory first! See https://help.accre.vanderbilt.edu/index.php?title=Overview for the most up to date information.
+
+These examples use **current ACCRE configuration** and are recommended for all users:
+
+- ✅ Current partitions (batch, batch_gpu, interactive, interactive_gpu)
+- ✅ Proper `setup_accre_software_stack` usage
+- ✅ Current GPU types and syntax
+- ✅ Up-to-date module loading
+
+**Quick start**:
+```bash
+cd basic-examples/
+cat README.md
+# Edit script to add your account name, then:
+sbatch 01_basic_batch.slurm
+```
+
+**⚠️ IMPORTANT**: All job scripts require `#SBATCH --account=your_account_name`. Find your account with: `sacctmgr show user $USER`
+
+---
+
+## ✅ Updated Examples (Safe to Use)
+
+The following directories contain **verified, up-to-date** examples:
+
+- **basic-examples/** (⭐ START HERE) - Comprehensive examples for new users
+
+## 📦 Archived Examples
+
+**archived-examples/** contains **severely** outdated examples that need updating before use. These examples are missing `setup_accre_software_stack` and may use deprecated module names or partition names. See the [archived-examples/README.md](archived-examples/README.md) for details.
+
+---
+
+## SLURM Commands Reference
 
 - **slurm-commands.sh**: contains lots of examples of SLURM commands
 and how to customize the output of each command
 
-Test Scripts
-------------
+---
+
+## Current Example Directories
+
+To submit any script:
+```bash
+sbatch SCRIPT_NAME.slurm
+```
 
 Make sure to change the email if you want to submit these scripts.
-To submit to the cluster type:
 
-	sbatch SCRIPT_NAME.slurm
+### ✅ Verified Current Examples
 
-- **srun/** This runs a few very simple commands, one with a single
-process, and another few with multiple processes.
-Demonstrates the use of srun.
+- **basic-examples/** (⭐ **START HERE**) - Up-to-date examples for new users with current ACCRE configuration. Includes:
+  - Basic batch (CPU) jobs
+  - GPU jobs with correct partition and gres syntax
+  - Job arrays
+  - Python example scripts
+  - Comprehensive README
 
-- **python-job/** Demonstrates a simple Python job, using a single CPU core.
+### 📦 Archived Examples
 
-- **mpi-job/** Example of a MPI job running across 3 nodes and 24 CPU cores.
-A simple MPI C++ code is also included, along with a compile script.
-
-- **job-array/** Job array example, showing how to run an executable on multiple
-similar input scripts in parallel.
-
-- **job-array2/** Another job array example, except in this case the processing 
-is simplified further as the file names (being analyzed by Python) do not need to
-follow a regular naming scheme. In fact, the file names are completely arbitrary, 
-the user just has to put them all in a subdirectory called **data** and then adjust
-the array to the appropriate length. 
-
-- **gpu-job/** GPU job example. This script loads HOOMD-Blue, a molecular dynamics
-package that runs on NVIDIA GPUs.
-
-- **pthread-job/** Multithreaded job example. This job runs a simple Hello World Posix
-threads C code. Multithreaded jobs generally run on a single node and only require
-a single task (i.e. process) that spawns a group of threads to execute across multiple
-CPU cores. The --cpus-per-task option is needed in multithreaded programs.
-
-- **openmp-job/** Multithreaded job example. This job runs a simple OpenMP vector addition
-program with multithreading. Multithreaded jobs generally run on a single node and only require
-a single task (i.e. process) that spawns a group of threads to execute across multiple
-CPU cores. The --cpus-per-task option is needed in multithreaded programs.
-
-- **epilog/** Epilog example. This job demonstrates how to invoke an epilog script after
-your job for post-processing. This particular example looks for any files in your directory
-that exceed 3 megabytes and compresses and archives those files. In practice, you might tweak
-this to only compress larger files and to exclude any large input files you do not wish to compress.
-
-- **julia-job/** Example of running Julia on the cluster in serial and in parallel.
+- **archived-examples/** - Contains examples that need updating before use (mpi-job, openmp-job, pthread-job, julia-job, epilog, job-array2, srun, memory-optimization). See [archived-examples/README.md](archived-examples/README.md) for details on what needs fixing.

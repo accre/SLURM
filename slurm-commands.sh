@@ -19,13 +19,8 @@
 #squeue --Format=account,username,numcpus,state,reason,starttime,timeleft,priority
 
 ### ACCRE staff have written custom commands for viewing the queue by group
-### Run q3 and qSummary without any arguments
-#q3
+### Run and qSummary without any arguments
 #qSummary
-
-### SlurmActive was also developed by ACCRE staff and provides information
-### about the number of processor cores available in the cluster
-#SlurmActive
 
 ### ACCRE staff have also written a command for viewing group limits called showLimits
 ### You can run this command without any arguments or with the -g <group_name> flag
@@ -67,7 +62,7 @@
 ### on how far back in time you want to go.
 #sreport cluster utilization
 #sreport user top  ### shows top ten cluster users
-#sreport cluster AcountUtilizationByUser start=2015-01-01 -t Hours  ### splits job usage (CPU hours) by group and user
+#sreport cluster AccountUtilizationByUser start=2015-01-01 -t Hours  ### splits job usage (CPU hours) by group and user
 #sreport job sizesbyaccount PrintJobCount  ### shows number of jobs run by user
 
 ### "sbatch" submits a SLURM job batch script. Note that this command
