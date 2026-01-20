@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --account=your_account_name
+#SBATCH --account=your_account_name_acc
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
@@ -11,7 +11,11 @@
 #SBATCH --output=gpu_example_%j.out
 
 # This is a basic example SLURM script for GPU jobs
-# CRITICAL: Must use batch_gpu (or interactive_gpu) partition and specify --gres with GPU type
+#
+# CRITICAL - GPU jobs require THREE things:
+#   1. --partition=batch_gpu (or interactive_gpu)
+#   2. --account=your_account_acc (NOTE: must use _acc suffix for batch_gpu!)
+#   3. --gres=gpu:TYPE:COUNT (specify GPU type and count)
 
 # Available GPU types at ACCRE (check your current available list with: slurm_resources):
 
@@ -21,7 +25,7 @@ setup_accre_software_stack
 # Load GPU-enabled software
 # Example: CUDA toolkit and Python
 module load gcc/12.3
-module load cuda/12.2
+module load cuda/12.6
 module load python/3.11.5
 
 # Print job information
@@ -32,7 +36,7 @@ echo "Job ID: $SLURM_JOB_ID"
 echo "Job Name: $SLURM_JOB_NAME"
 echo "Node: $SLURM_NODELIST"
 echo "Number of GPUs: $CUDA_VISIBLE_DEVICES"
-echo "GPU type requested: nvidia_rtx_a6000"
+echo "GPU type requested: nvidia_rtx_a4000"
 echo "Started at: $(date)"
 echo "========================================"
 

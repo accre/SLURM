@@ -2,15 +2,15 @@
 #SBATCH --account=your_account_name
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=8G
+#SBATCH --cpus-per-task=2
+#SBATCH --mem=2G
 #SBATCH --time=2:00:00
 #SBATCH --partition=batch
 #SBATCH --job-name=basic_example
 #SBATCH --output=basic_example_%j.out
 
 # This is a basic example SLURM script for CPU-only jobs
-# It requests 1 node, 4 CPU cores, 8GB RAM, and 2 hours of time
+# It requests 1 node, 2 CPU cores, 2GB RAM, and 2 hours of time
 
 # CRITICAL: Load ACCRE software stack before any module loads (if using provided software stack)
 setup_accre_software_stack
